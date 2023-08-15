@@ -9,8 +9,14 @@ from sys import stdout
 from colorama import Fore, Style, Back, init
 from concurrent.futures import ThreadPoolExecutor
 
+def dirdar():
+    if not os.path.exists('Results'):
+        os.mkdir('Results')
+
+def clear():
+    os.system('clear' if os.name == 'posix' else 'cls')
+
 def banners():
-    clear()
     stdout.write("                                                                                         \n")
     stdout.write(""+Fore.LIGHTRED_EX +"███████╗ ██████╗ █████╗ ██████╗  █████╗\n")
     stdout.write(""+Fore.LIGHTRED_EX +"██╔════╝██╔════╝██╔══██╗██╔══██╗██╔══██╗\n")
@@ -44,13 +50,6 @@ class Colors:
     YELLOW = '\033[93m'
     BLUE = '\033[94m'
     ENDC = '\033[0m'
-
-def dirdar():
-    if not os.path.exists('Results'):
-        os.mkdir('Results')
-
-def clear():
-    os.system('clear' if os.name == 'posix' else 'cls')
 
 def colorize(level, msg):
     color_mapping = {
@@ -117,8 +116,8 @@ def main():
     parser.add_argument("-t", "--threads", type=int, default=1, help="Number of threads for concurrent scanning")
     args = parser.parse_args()
 
-    create_results_directory()
-    clear_screen()
+    dirdar()
+    clear()
 
     global vncviewer_path
     vncviewer_path = shutil.which("vncviewer")
