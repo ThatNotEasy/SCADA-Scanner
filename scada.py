@@ -45,11 +45,11 @@ class Colors:
     BLUE = '\033[94m'
     ENDC = '\033[0m'
 
-def create_results_directory():
+def dirdar():
     if not os.path.exists('Results'):
         os.mkdir('Results')
 
-def clear_screen():
+def clear():
     os.system('clear' if os.name == 'posix' else 'cls')
 
 def colorize(level, msg):
