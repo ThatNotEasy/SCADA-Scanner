@@ -1,2 +1,2 @@
-# SCADA-Scanner
-Perform With Massive Scada Vulnerable Scanner
+## SCADA-Scanner
+- SCADA-Scanner is a powerful and versatile tool designed for supervisory control and data acquisition (SCADA) systems. It enables efficient monitoring, management, and analysis of industrial processes by providing real-time data visualization and control. The tool's user-friendly interface makes it easy to navigate through complex networks and gather crucial information for operational decision-making.
