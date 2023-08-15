@@ -12,11 +12,13 @@ from concurrent.futures import ThreadPoolExecutor
 def dirdar():
     if not os.path.exists('Results'):
         os.mkdir('Results')
+dirdar()
 
 def clear():
     os.system('clear' if os.name == 'posix' else 'cls')
 
 def banners():
+    clear()
     stdout.write("                                                                                         \n")
     stdout.write(""+Fore.LIGHTRED_EX +"███████╗ ██████╗ █████╗ ██████╗  █████╗\n")
     stdout.write(""+Fore.LIGHTRED_EX +"██╔════╝██╔════╝██╔══██╗██╔══██╗██╔══██╗\n")
@@ -115,9 +117,6 @@ def main():
     parser.add_argument("-f", "--file", required=True, help="Input file containing IPs or domain list")
     parser.add_argument("-t", "--threads", type=int, default=1, help="Number of threads for concurrent scanning")
     args = parser.parse_args()
-
-    dirdar()
-    clear()
 
     global vncviewer_path
     vncviewer_path = shutil.which("vncviewer")
